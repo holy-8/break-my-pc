@@ -106,4 +106,4 @@ def run(code: str, tmpdir: TemporaryDirectory, language: str) -> tuple[int, str,
     elif language in ('haskell', 'hs'):
         return run_compiler(code, tmpdir, '.hs', (config.GHC_PATH, '-o', 'out.exe'), config.TIMEOUT, 'out.exe')
     else:
-        raise ValueError('Language `{language}` is not recognised')
+        raise ValueError(f'Language `{language}` is not recognised')
