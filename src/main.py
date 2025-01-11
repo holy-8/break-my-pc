@@ -33,7 +33,7 @@ async def on_ready() -> None:
 
 @bot.command(name='e')
 async def execute(ctx: commands.Context) -> None:
-    if ctx.author.id in config.BLACK_LIST or ctx.channel.type in (discord.ChannelType.private, None):
+    if ctx.author.id in config.BLACK_LIST or ctx.channel.type is discord.ChannelType.private:
         await ctx.reply('No.')
         return
 
